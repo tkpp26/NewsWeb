@@ -1,5 +1,31 @@
 const apiKey = "bc0c5c54ba5f46279fceac6301227d04";
-const url = `https://newsapi.org/v2/everything?q=tesla&from=2024-06-07&sortBy=publishedAt&apiKey=${apiKey}`;
+const url = `https://newsapi.org/v2/everything?q=ai&from=2024-06-07&sortBy=publishedAt&apiKey=${apiKey}`;
+async function fetchNews() {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+    const data = await response.json();
+    const uniqueArticles = removeDuplicates(data.articles, "title");
+    displayNews(
+      uniqueArticles.filter(
+        (article) => article.title !== "[Removed]" && article.urlToImage
+      )
+    ); // Call a function to display news articles
+  } catch (error) {
+    console.error("There has been a problem with your fetch operation:", error);
+  }
+}
+
+function removeDuplicates(arr, prop) {
+  return arr.filter(
+    (obj, index, self) =>
+      index === self.findIndex((el) => el[prop] === obj[prop])
+  );
+}
+
+/*
 
 async function fetchNews() {
   try {
@@ -17,6 +43,7 @@ async function fetchNews() {
     console.error("There has been a problem with your fetch operation:", error);
   }
 }
+*/
 
 function displayNews(articles) {
   const newsContainer = document.getElementById("news-container");
