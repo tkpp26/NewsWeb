@@ -6,37 +6,57 @@
   box-sizing: border-box;
 }
 
-/* Replace <uniquifier> with a unique and descriptive class name */
-/* Replace <weight> with a value from 100 to 900 */
+.raleway {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
 
 body {
   font-family: "Helevetica", sans-serif;
   font-size: 18px;
   line-height: 26px;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 header {
-  width: 100%;
   display: flex;
+  justify-content: space-between;
+  text-align: center;
   align-items: center;
-  padding: 10px;
-  height: 40px;
   position: fixed;
   top: 0;
-  left: 0;
-  background-color: rgb(200, 243, 247);
-  z-index: 1000;
+  width: 100%;
+  padding: 10px 50px;
+  height: 40px;
+  background-color: rgb(251, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+}
+
+main {
+  padding-top: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .introduction {
-  margin-top: 200px;
+  margin-top: 60px;
+  max-width: 400px;
+  text-align: center;
 }
 
 .container {
@@ -46,15 +66,9 @@ header {
   max-width: 1200px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   margin-top: 60px;
-  height: 100%;
+  height: calc(100% - 60px);
   overflow: hidden;
   overflow-y: auto;
-}
-
-.raleway {
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
 }
 
 #news-container {
@@ -65,48 +79,6 @@ header {
   width: 100%;
   max-width: 1200px;
   margin: auto;
-}
-
-.card {
-  width: 320px;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.card:hover {
-  transform: scale(1.01);
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-}
-
-.card h2 {
-  font-size: 1.5em;
-  margin: 0;
-  padding: 16px;
-  background-color: #edf4ff;
-  color: rgb(100, 100, 100);
-}
-
-.card img {
-  width: 100%;
-  height: 200px; /* Set a fixed height */
-  object-fit: cover; /* Ensures the image covers the entire area, maintaining aspect ratio */
-}
-
-.card p {
-  padding: 16px;
-  margin: 0;
-  font-size: 1em;
-  color: #333;
-}
-
-button {
-  align-self: flex-start;
 }
 
 nav a {
@@ -146,25 +118,40 @@ nav a:hover:after {
   width: 100%;
 }
 
-/* Thin scrollbar */
-.container {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.036);
+.card {
+  width: 320px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  transition: 0.2s;
+  cursor: pointer;
 }
 
-.container::-webkit-scrollbar {
-  width: 5px;
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
-.container::-webkit-scrollbar-track {
-  background: transparent;
+.card h2 {
+  font-size: 1em;
+  margin: 0;
+  padding: 16px;
+  background-color: #edf4ff;
+  color: rgb(100, 100, 100);
 }
 
-.container::-webkit-scrollbar-thumb {
-  background: #0c0c0c;
-  border-radius: 10px;
+.card img {
+  width: 100%;
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; /* Ensures the image covers the entire area, maintaining aspect ratio */
 }
 
-.container::-webkit-scrollbar-thumb:hover {
-  background: #99999946;
+.card p {
+  padding: 16px;
+  margin: 0;
+  font-size: 0.8em;
+  color: #333;
 }

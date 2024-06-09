@@ -1,8 +1,8 @@
 var texts = [
-  ".Lorem ipsum dummy text blabla.",
-  "Here comes the second sentence!",
-  "This is the third sentence.",
-  "And here goes another one.",
+  ".Explore a world where innovation meets inspiration every click of the way.",
+  "..Discover fresh perspectives, trends, and groundbreaking ideas curated just for you.",
+  "..Explore a world where innovation meets inspiration every click of the way.",
+  "..ahead ahead of the curve and be part of what's shaping the future.",
 ];
 var currentTextIndex = 0;
 var i = 0;
