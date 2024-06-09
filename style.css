@@ -18,47 +18,84 @@ body {
 }
 
 header {
-  width: 100%; /* Make sure header takes full width */
+  width: 100%;
   display: flex;
   align-items: center;
   padding: 10px;
   height: 40px;
-  position: fixed; /* Fix header at the top */
+  position: fixed;
   top: 0;
   left: 0;
   background-color: rgb(200, 243, 247);
-  z-index: 1000; /* Ensure header stays above other content */
+  z-index: 1000;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
 .container {
   padding: 90px;
-
-  display: flex;
   background-color: rgb(250, 250, 250);
   width: 80%;
   max-width: 1200px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  justify-content: center;
-  text-align: center;
-  margin-top: 60px; /* Add margin to account for fixed header height */
+  margin-top: 60px;
   height: 100%;
   overflow: hidden;
   overflow-y: auto;
 }
 
-button {
-  align-self: flex-start; /* Align button to the start of the flex container */
+#news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h2 {
+  font-size: 1.5em;
+  margin: 0;
+  padding: 16px;
+  background-color: #007BFF;
+  color: white;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card p {
+  padding: 16px;
+  margin: 0;
+  font-size: 1em;
+  color: #333;
+}
+
+button {
+  align-self: flex-start;
+}
+
 nav a {
-  color: #000000; /* Set text color to white */
+  color: #000000;
   font-size: 18px;
   text-decoration: none;
   cursor: pointer;
-  padding: 10px 15px; /* Add padding to the links */
-  border-radius: 5px; /* Add border radius for rounded corners */
-  position: relative; /* Add position relative for pseudo-elements */
+  padding: 10px 15px;
+  border-radius: 5px;
+  position: relative;
 }
 
 nav a:before,
@@ -90,24 +127,25 @@ nav a:hover:after {
 
 /* Thin scrollbar */
 .container {
-  scrollbar-width: thin; /* For Firefox */
-  scrollbar-color: rgba(0, 0, 0, 0.036); /* For Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.036);
 }
 
-/* For WebKit browsers (Chrome, Safari, etc.) */
 .container::-webkit-scrollbar {
-  width: 5px; /* Width of the scrollbar */
+  width: 5px;
 }
 
 .container::-webkit-scrollbar-track {
-  background: transparent; /* Track color */
+  background: transparent;
 }
 
 .container::-webkit-scrollbar-thumb {
-  background: #0c0c0c; /* Thumb color */
-  border-radius: 10px; /* Rounded corners */
+  background: #0c0c0c;
+  border-radius: 10px;
 }
 
 .container::-webkit-scrollbar-thumb:hover {
-  background: #99999946; /* Thumb color on hover */
+  background: #99999946;
 }
+
+
