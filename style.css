@@ -34,9 +34,11 @@ header {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
+
 .introduction {
   margin-top: 200px;
 }
+
 .container {
   padding: 90px;
   background-color: rgb(250, 250, 250);
@@ -59,25 +61,10 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  justify-content: center; /* Center the grid content horizontally */
-  width: 100%; /* Ensure the grid takes full width of the container */
-  max-width: 1200px; /* Optional: set a max-width */
-  margin: auto; /* Center the grid container itself */
-}
-
-/* News container grid */
-#news-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px; /* Set a default gap between grid items */
-  margin-top: 20px;
-}
-
-/* News container grid */
-#news-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px; /* Set a default gap between grid items */
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .card {
