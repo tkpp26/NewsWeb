@@ -6,8 +6,11 @@
   box-sizing: border-box;
 }
 
+/* Replace <uniquifier> with a unique and descriptive class name */
+/* Replace <weight> with a value from 100 to 900 */
+
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "Helevetica", sans-serif;
   font-size: 18px;
   line-height: 26px;
   height: 100vh;
@@ -32,6 +35,10 @@ header {
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
+.introduction {
+  margin-top: 200px;
+}
+
 .container {
   padding: 90px;
   background-color: rgb(250, 250, 250);
@@ -44,37 +51,51 @@ header {
   overflow-y: auto;
 }
 
+.raleway {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 #news-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .card {
+  width: 320px;
   background-color: white;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 2px;
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  transition: 0.2s;
   cursor: pointer;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 .card h2 {
   font-size: 1.5em;
   margin: 0;
   padding: 16px;
-  background-color: #007BFF;
-  color: white;
+  background-color: #edf4ff;
+  color: rgb(100, 100, 100);
 }
 
 .card img {
   width: 100%;
-  height: auto;
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; /* Ensures the image covers the entire area, maintaining aspect ratio */
 }
 
 .card p {
@@ -147,5 +168,3 @@ nav a:hover:after {
 .container::-webkit-scrollbar-thumb:hover {
   background: #99999946;
 }
-
-
