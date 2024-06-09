@@ -8,7 +8,11 @@ async function fetchNews() {
       throw new Error("Network response was not ok " + response.statusText);
     }
     const data = await response.json();
-    displayNews(data.articles); // Call a function to display news articles
+    displayNews(
+      data.articles.filter(
+        (article) => article.title !== "[Removed]" && article.urlToImage
+      )
+    ); // Call a function to display news articles
   } catch (error) {
     console.error("There has been a problem with your fetch operation:", error);
   }
