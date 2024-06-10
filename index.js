@@ -85,13 +85,18 @@ function displayNews(articles) {
   articles.forEach((article) => {
     const card = createElement(
       "div",
-      { class: "card", onclick: `location.href='${article.url}';` },
+      { class: "card", onclick: `openArticleInNewTab('${article.url}')` },
       createElement("h2", { class: "raleway", text: article.title }),
       createElement("img", { src: article.urlToImage, alt: "Article Image" }),
       createElement("p", { class: "raleway", text: article.description })
     );
     newsContainer.appendChild(card);
   });
+}
+
+// Function to open article in new tab
+function openArticleInNewTab(url) {
+  window.open(url, "_blank"); // Open URL in a new tab
 }
 
 // Event listener for the search form
@@ -103,4 +108,4 @@ document
     fetchNews(query);
   });
 
-fetchNews("AI");
+fetchNews("OpenAI");
