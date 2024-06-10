@@ -121,7 +121,7 @@ nav a:hover:after {
 }
 
 .card {
-  width: 330px;
+  width: 290px;
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 2px;
@@ -188,14 +188,23 @@ nav a:hover:after {
 }
 
 #search-button {
-  width: 3.5rem;
-  height: 2.8rem;
+  width: 2.5rem;
+  height: 2.5rem;
   margin-left: -3.5rem;
   background: none;
+  border-radius: 100px;
+  margin-top: 2px;
+  transform: translateX(12px);
+  transition: 0.2s;
   border: none;
   outline: none;
+  overflow: hidden;
 }
 
 #search-button:hover {
   cursor: pointer;
+  background-color: rgb(220, 252, 248);
+}
+#search-button:hover svg {
+  color: #ddd; /* Change the fill color to #ddd on hover */
 }
