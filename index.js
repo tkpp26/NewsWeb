@@ -1,6 +1,10 @@
 const apiKey = "bc0c5c54ba5f46279fceac6301227d04";
-const url = `https://newsapi.org/v2/everything?q=ai&from=2024-06-07&sortBy=publishedAt&apiKey=${apiKey}`;
-async function fetchNews() {
+const url = `https://newsapi.org/v2/everything?q=japan&from=2024-06-07&sortBy=publishedAt&apiKey=${apiKey}`;
+
+async function fetchNews(query) {
+  const formattedQuery = query.replace(/\s+/g, "_"); // Replace spaces with underscores
+  const url = `https://newsapi.org/v2/everything?q=${formattedQuery}&from=2024-06-07&sortBy=publishedAt&apiKey=${apiKey}`;
+
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -89,4 +93,14 @@ function displayNews(articles) {
     newsContainer.appendChild(card);
   });
 }
-fetchNews();
+
+// Event listener for the search form
+document
+  .getElementById("search-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    const query = document.getElementById("search-input").value;
+    fetchNews(query);
+  });
+
+fetchNews("AI");
