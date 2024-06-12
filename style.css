@@ -55,19 +55,21 @@ main {
 
 .introduction {
   margin-top: 60px;
-  max-width: 400px;
+  width: 80%;
   height: 100px;
   padding-bottom: 7px;
   text-align: center;
 }
-
+.anim {
+  margin-bottom: 20px;
+}
 .container {
   padding: 60px;
   background-color: rgb(250, 250, 250);
   width: 80%;
   max-width: 1200px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  margin-top: 60px;
+  margin-top: 450px;
   height: calc(100% - 60px);
   overflow: hidden;
   overflow-y: auto;
