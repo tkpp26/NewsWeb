@@ -1,3 +1,4 @@
+/* Reset some basic elements */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +14,7 @@
 }
 
 body {
-  font-family: "Helevetica", sans-serif;
+  font-family: "Helvetica", sans-serif;
   font-size: 18px;
   line-height: 26px;
   height: 100vh;
@@ -53,36 +54,16 @@ main {
   align-items: center;
 }
 
-.introduction {
-  margin-top: 60px;
-  width: 80%;
-  height: 100px;
-  padding-bottom: 7px;
-  text-align: center;
-}
-.anim {
-  margin-bottom: 20px;
-}
 .container {
   padding: 60px;
   background-color: rgb(250, 250, 250);
   width: 80%;
   max-width: 1200px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  margin-top: 450px;
+  margin-top: 60px;
   height: calc(100% - 60px);
   overflow: hidden;
   overflow-y: auto;
-}
-
-#news-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
 }
 
 nav a {
@@ -204,4 +185,22 @@ nav a:hover:after {
 #search-button:active {
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+/* Additional styles for the About page */
+.about-section {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 1.125rem;
+  margin-bottom: 20px;
 }

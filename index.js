@@ -34,26 +34,6 @@ function removeDuplicates(arr, prop) {
   );
 }
 
-/*
-
-async function fetchNews() {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error("Network response was not ok " + response.statusText);
-    }
-    const data = await response.json();
-    displayNews(
-      data.articles.filter(
-        (article) => article.title !== "[Removed]" && article.urlToImage
-      )
-    ); // Call a function to display news articles
-  } catch (error) {
-    console.error("There has been a problem with your fetch operation:", error);
-  }
-}
-*/
-
 function displayNews(articles) {
   const newsContainer = document.getElementById("news-container");
   // Clear previous content
