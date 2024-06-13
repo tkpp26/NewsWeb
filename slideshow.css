@@ -6,7 +6,9 @@ body {
   margin: 0;
 }
 .mySlides {
+  width: 100%; /* Ensures the slides take up the full width of the container */
   display: none;
+  background-color: #797979;
 }
 img {
   vertical-align: middle;
@@ -14,9 +16,12 @@ img {
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  border-radius: 2px;
+  max-width: 700px; /* Maximum width for the container */
   position: relative;
   margin: auto;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 /* Next & previous buttons */
