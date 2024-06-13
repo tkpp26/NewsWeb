@@ -4,11 +4,11 @@ const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are
 const day = String(currentDate.getDate()).padStart(2, "0"); //
 const formattedDate = `${year}-${month}-${day}`;
 const apiKey = "bc0c5c54ba5f46279fceac6301227d04";
-const url = `https://newsapi.org/v2/everything?q=openai&from=${formattedDate}&sortBy=publishedAt&apiKey=${apiKey}`;
+const url = `https://newsapi.org/v2/top-headlines?q=openai&from=${formattedDate}&sortBy=publishedAt&apiKey=${apiKey}`;
 
 async function fetchNews(query) {
   const formattedQuery = query.replace(/\s+/g, "_"); // Replace spaces with underscores
-  const url = `https://newsapi.org/v2/everything?q=${formattedQuery}&from=${formattedDate}&sortBy=publishedAt&apiKey=${apiKey}`;
+  const url = `https://newsapi.org/v2/top-headlines?q=${formattedQuery}&from=${formattedDate}&sortBy=publishedAt&apiKey=${apiKey}`;
 
   try {
     const response = await fetch(url);
