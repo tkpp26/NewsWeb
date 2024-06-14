@@ -1,3 +1,4 @@
+import "../styles/slideshow.css";
 const apikey = process.env.API_KEY;
 
 document.addEventListener("DOMContentLoaded", function () {

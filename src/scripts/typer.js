@@ -1,3 +1,4 @@
+import "../styles/typer.css";
 var texts = [
   ".Explore a world where innovation meets inspiration every click of the way.",
   "..Discover fresh perspectives, trends, and groundbreaking ideas curated just for you.",

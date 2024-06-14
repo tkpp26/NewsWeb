@@ -1,3 +1,5 @@
+import "../styles/background.css";
+
 const rad = Math.PI / 180;
 let rid = null;
 const canvas = document.getElementById("canvas");
