@@ -1,9 +1,12 @@
+import "./styles/style.css";
+import "./styles/slideshow.css";
+import "./styles/background.css";
 const currentDate = new Date();
 const year = currentDate.getFullYear();
-const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are zero-base
-const day = String(currentDate.getDate()).padStart(2, "0"); //
+const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are zero-based
+const day = String(currentDate.getDate()).padStart(2, "0");
 const formattedDate = `${year}-${month}-${day}`;
-const apiKey = "bc0c5c54ba5f46279fceac6301227d04";
+const apiKey = process.env.API_KEY; // Assuming you set the API key elsewhere
 const url = `https://newsapi.org/v2/top-headlines?q=openai&from=${formattedDate}&sortBy=publishedAt&apiKey=${apiKey}`;
 
 async function fetchNews(query) {
@@ -21,7 +24,7 @@ async function fetchNews(query) {
       uniqueArticles.filter(
         (article) => article.title !== "[Removed]" && article.urlToImage
       )
-    ); // Call a function to display news articles
+    );
   } catch (error) {
     console.error("There has been a problem with your fetch operation:", error);
   }
@@ -36,14 +39,11 @@ function removeDuplicates(arr, prop) {
 
 function displayNews(articles) {
   const newsContainer = document.getElementById("news-container");
-  // Clear previous content
   newsContainer.innerHTML = "";
 
-  // Function to create HTML elements
   function createElement(tag, props, ...children) {
     const element = document.createElement(tag);
 
-    // Set properties
     for (const [key, value] of Object.entries(props)) {
       if (key === "text") {
         element.textContent = value;
@@ -54,7 +54,6 @@ function displayNews(articles) {
       }
     }
 
-    // Append children
     children.forEach((child) => {
       if (typeof child === "string") {
         element.appendChild(document.createTextNode(child));
@@ -66,25 +65,23 @@ function displayNews(articles) {
     return element;
   }
 
-  // Create and append article cards
   articles.forEach((article) => {
     const card = createElement(
       "div",
-      { class: "card", onclick: `openArticleInNewTab('${article.url}')` },
+      { class: "card" },
       createElement("h2", { class: "raleway", text: article.title }),
       createElement("img", { src: article.urlToImage, alt: "Article Image" }),
       createElement("p", { class: "raleway", text: article.description })
     );
+    card.addEventListener("click", () => openArticleInNewTab(article.url));
     newsContainer.appendChild(card);
   });
 }
 
-// Function to open article in new tab
 function openArticleInNewTab(url) {
-  window.open(url, "_blank"); // Open URL in a new tab
+  window.open(url, "_blank");
 }
 
-// Event listener for the search form
 document
   .getElementById("search-form")
   .addEventListener("submit", function (event) {

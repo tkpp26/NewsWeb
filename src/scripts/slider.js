@@ -1,6 +1,8 @@
+const apikey = process.env.API_KEY;
+
 document.addEventListener("DOMContentLoaded", function () {
   fetch(
-    "https://newsapi.org/v2/top-headlines?country=us&category=Technology&apiKey=bc0c5c54ba5f46279fceac6301227d04"
+    `https://newsapi.org/v2/top-headlines?country=us&category=Technology&apiKey=${apikey}`
   )
     .then((response) => response.json())
     .then((data) => {

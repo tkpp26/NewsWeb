@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tech News</title>
-    <!--Fonts-->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <!--CSS-->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="slideshow.css" />
-    <link rel="stylesheet" href="background.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/slideshow.css" />
+    <link rel="stylesheet" href="./styles/background.css" />
   </head>
   <body>
     <canvas id="canvas"></canvas>
@@ -22,7 +22,7 @@
     <header>
       <div class="logo" style="display: flex; align-items: center">
         <img
-          src="./assets/world-globe-with-white-background-24474d.jpg"
+          src="../assets/world-globe-with-white-background-24474d.jpg"
           alt="Logo"
           style="width: 32px; height: 32px; margin-right: 10px"
         />
@@ -30,9 +30,8 @@
       </div>
       <div class="nav raleway">
         <nav>
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+          <a href="./index.html">Home</a>
+          <a href="about/about.html">About</a>
         </nav>
       </div>
     </header>
@@ -75,10 +74,8 @@
       </div>
     </main>
     <footer></footer>
-    <script src="typer.js"></script>
-    <script src="slider.js"></script>
-    <script src="liveBackground.js"></script>
-    <script async src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
-    <script src="index.js"></script>
+    <!-- JavaScript -->
+    <script src="../dist/bundle.js"></script>
+    <!-- Assuming bundle.js is your bundled script -->
   </body>
 </html>
