@@ -1,7 +1,6 @@
 #demo {
   font-size: 20px;
   color: #333;
-  border: 2px solid #333;
   padding: 10px;
   width: fit-content;
   margin: 20px 0;
@@ -9,5 +8,8 @@
   overflow: auto; /* Add overflow to allow scrolling if content exceeds the height */
 }
 .anim {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-height: 200px;
 }
