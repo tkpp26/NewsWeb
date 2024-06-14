@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const dot = document.createElement("span");
         dot.classList.add("dot");
-        dot.setAttribute("onclick", `currentSlide(${index + 1})`);
+        dot.setAttribute("data-index", index + 1); // Set data-index attribute
         dotsContainer.appendChild(dot);
       });
 
@@ -65,18 +65,27 @@ document.addEventListener("DOMContentLoaded", function () {
           slides[i].style.display = "none";
         }
         for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
+          dots[i].classList.remove("active"); // Remove active class from all dots
         }
         slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
+        dots[slideIndex - 1].classList.add("active"); // Add active class to the current dot
       }
 
+      // Event listeners for prev and next buttons
       document.querySelector(".prev").addEventListener("click", function () {
         plusSlides(-1);
       });
 
       document.querySelector(".next").addEventListener("click", function () {
         plusSlides(1);
+      });
+
+      // Event listener for dots
+      const dotElements = document.querySelectorAll(".dot");
+      dotElements.forEach((dot) => {
+        dot.addEventListener("click", function () {
+          currentSlide(parseInt(dot.getAttribute("data-index")));
+        });
       });
     })
     .catch((error) => console.error("Error fetching the news:", error));

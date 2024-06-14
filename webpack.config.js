@@ -13,7 +13,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js",
-    assetModuleFilename: "images/[hash][ext][query]",
+    assetModuleFilename: "images/[hash][ext][query]", // Define asset output path,
     clean: true, // Cleans the output directory before each build
   },
   plugins: [
@@ -44,6 +44,9 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         type: "asset/resource",
+        generator: {
+          filename: "images/[hash][ext][query]", // Define asset output path
+        },
       },
     ],
   },
