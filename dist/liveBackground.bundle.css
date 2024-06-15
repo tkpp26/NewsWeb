@@ -1,0 +1,14 @@
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; /* Send it to the back */
+  background-image: radial-gradient(
+    50vw circle at 50vw 20vh,
+    rgb(255, 255, 255),
+    #ffffffe6
+  );
+}
+

@@ -1,19 +1,20 @@
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
     index: "./src/index.js",
-    about: "./src/about/about.js",
     slider: "./src/scripts/slider.js",
     liveBackground: "./src/scripts/liveBackground.js",
     typer: "./src/scripts/typer.js",
+    about: "./src/about.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js",
-    assetModuleFilename: "images/[hash][ext][query]", // Define asset output path,
+    assetModuleFilename: "./images/[hash][ext][query]", // Ensure correct path for images
     clean: true, // Cleans the output directory before each build
   },
   plugins: [
@@ -21,14 +22,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "index.html",
-      chunks: ["index", "slider", "liveBackground", "typer"],
+      chunks: ["slider", "liveBackground", "typer", "index"],
     }),
     new HtmlWebpackPlugin({
-      template: "./src/about/about.html",
+      template: "./src/about.html",
       filename: "about.html",
       chunks: ["about"],
     }),
-    // Add more HtmlWebpackPlugin instances for additional HTML pages
+    new MiniCssExtractPlugin({
+      filename: "[name].bundle.css",
+      chunkFilename: "[id].css",
+    }),
   ],
   module: {
     rules: [
@@ -39,14 +43,18 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpg)$/i,
         type: "asset/resource",
         generator: {
           filename: "images/[hash][ext][query]", // Define asset output path
         },
+      },
+      {
+        test: /\.ttf$/,
+        use: ["url-loader"],
       },
     ],
   },

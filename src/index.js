@@ -1,6 +1,8 @@
 import "./styles/style.css";
 import "./styles/slideshow.css";
 import "./styles/background.css";
+import "./styles/typer.css";
+import logoImage from "./images/logo.jpg";
 
 const currentDate = new Date();
 const year = currentDate.getFullYear();
@@ -92,3 +94,7 @@ document
   });
 
 fetchNews("OpenAI");
+
+// After importing logoImage
+const logoElement = document.querySelector(".logo img"); // Select the <img> element inside .logo
+logoElement.src = logoImage; // Set the src attribute to the imported logoImage

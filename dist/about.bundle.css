@@ -1,0 +1,132 @@
+/* Reset some basic elements */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.raleway {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+body {
+  font-family: "Helvetica", sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 50px;
+  height: 40px;
+  background-color: rgb(251, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+}
+
+main {
+  padding-top: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  background-color: rgb(250, 250, 250);
+  width: 80%;
+  max-width: 1200px;
+  height: calc(100% - 60px);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+header a {
+  color: #000000;
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  position: relative;
+}
+
+nav a:before,
+nav a:after {
+  position: absolute;
+  opacity: 0;
+  width: 0%;
+  height: 1px;
+  content: "";
+  background: #000000;
+  transition: all 0.3s;
+}
+
+nav a:before {
+  left: 0px;
+  top: 0px;
+}
+
+nav a:after {
+  right: 0px;
+  bottom: 0px;
+}
+
+nav a:hover:before,
+nav a:hover:after {
+  opacity: 1;
+  width: 100%;
+}
+
+/* Additional styles for the About page */
+.about-section {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+}
+
+.about-section p {
+  font-size: 1.125rem;
+  margin-bottom: 20px;
+}
+
+footer {
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
