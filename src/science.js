@@ -10,9 +10,28 @@ const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are
 const day = String(currentDate.getDate()).padStart(2, "0");
 const formattedDate = `${year}-${month}-${day}`;
 const apiKey = process.env.API_KEY; // Assuming you set the API key elsewhere
-const url = `https://newsapi.org/v2/top-headlines?q=openai&from=${formattedDate}&sortBy=publishedAt&apiKey=${apiKey}`;
 
-async function fetchNews(query) {
+async function fetchNews(category) {
+  const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apiKey}`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+    const data = await response.json();
+    const uniqueArticles = removeDuplicates(data.articles, "title");
+    displayNews(
+      uniqueArticles.filter(
+        (article) => article.title !== "[Removed]" && article.urlToImage
+      )
+    );
+  } catch (error) {
+    console.error("There has been a problem with your fetch operation:", error);
+  }
+}
+
+async function fetchQuery(query) {
   const formattedQuery = query.replace(/\s+/g, "_"); // Replace spaces with underscores
   const url = `https://newsapi.org/v2/top-headlines?q=${formattedQuery}&from=${formattedDate}&sortBy=publishedAt&apiKey=${apiKey}`;
 
@@ -90,10 +109,10 @@ document
   .addEventListener("submit", function (event) {
     event.preventDefault();
     const query = document.getElementById("search-input").value;
-    fetchNews(query);
+    fetchQuery(query);
   });
 
-fetchNews("openAI");
+fetchNews("Science");
 
 // After importing logoImage (for bundling)
 const logoElement = document.querySelector(".logo img"); // Select the <img> element inside .logo

@@ -10,6 +10,10 @@ module.exports = {
     liveBackground: "./src/scripts/liveBackground.js",
     typer: "./src/scripts/typer.js",
     about: "./src/about.js",
+    tech: "./src/tech.js",
+    business: "./src/business.js",
+    science: "./src/science.js",
+    health: "./src/health.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -28,6 +32,26 @@ module.exports = {
       template: "./src/about.html",
       filename: "about.html",
       chunks: ["about"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/tech.html",
+      filename: "tech.html",
+      chunks: ["slider", "liveBackground", "typer", "tech"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/business.html",
+      filename: "business.html",
+      chunks: ["slider", "liveBackground", "typer", "business"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/science.html",
+      filename: "science.html",
+      chunks: ["slider", "liveBackground", "typer", "science"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/health.html",
+      filename: "health.html",
+      chunks: ["slider", "liveBackground", "typer", "health"],
     }),
     new MiniCssExtractPlugin({
       filename: "[name].bundle.css",
