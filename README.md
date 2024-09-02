@@ -5,10 +5,38 @@
 This news application is built using JavaScript, HTML, and CSS. It utilizes the NewsAPI to display recent news articles from various categories that users can select.
 The project is collaboratively developed by Yar Moradpour and Shizuka Takao.
 
-## Collaborators
+## Installation
+### Clone the Repository
 
-- Yar Moradpour
-- Shizuka Takao
+```bash
+git clone https://github.com/khmorad/clothingRecommendationApp.git
+cd clothingRecommendationApp
+```
+
+### Frontend Setup
+
+1. Navigate to the `frontend` directory:
+
+```bash
+cd frontend
+```
+
+2. Install the required Node.js packages:
+
+```bash
+npm install
+```
+
+3. Run the React development server:
+
+```bash
+npm start
+```
+
+## Technology Stack
+
+- **Frontend**: React, HTML, CSS, JavaScript
+- **APIs**: News API 
 
 ## Features
 
@@ -16,3 +44,12 @@ The project is collaboratively developed by Yar Moradpour and Shizuka Takao.
 - **Responsive Design**: The application is designed to work seamlessly on both desktop and mobile devices.
 - **Dynamic Content**: News articles are dynamically fetched and displayed using the NewsAPI.
 - **Duplicate Filtering**: The application filters out duplicate articles to ensure unique content.
+
+## Team Members
+
+- **Yar Moradpour**
+- **Shizuka Takao**
+
+## License
+
+This project is licensed under the MIT License.
