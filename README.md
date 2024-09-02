@@ -1,4 +1,4 @@
-# News Application
+# NewsWeb
 ![image](https://github.com/user-attachments/assets/93ca44d2-f59a-40ea-b8f5-27576c94fe8f)
 ## Overview
 
