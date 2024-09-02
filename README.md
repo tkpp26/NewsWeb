@@ -1,5 +1,5 @@
 # News Application
-
+![image](https://github.com/user-attachments/assets/93ca44d2-f59a-40ea-b8f5-27576c94fe8f)
 ## Overview
 
 This news application is built using JavaScript, HTML, and CSS. It utilizes the NewsAPI to display recent news articles from various categories that users can select.
